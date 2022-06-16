@@ -8,8 +8,9 @@ from .forms import Driver, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def home(request):
-    return render(request, 'index.html')
+    return render(request,'home.html')
 
 def register(request):
     if request.method == 'POST':
